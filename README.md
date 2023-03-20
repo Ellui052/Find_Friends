@@ -2,7 +2,7 @@
 ## Project Name : Find Friends / Made by Jse
 <br>
 
-> ### what is Find Friends?
+> ## what is Find Friends?
 ### Friend Finder is when people with the same hobby build friendships through bulletin boards and It is a project with the purpose of gradually developing offline friendships rather than online friends by using chatting. ###
 
 ## [Project Plan](https://www.notion.so/Find-Friends-caa1222ccc5c400297547269031b8488)
