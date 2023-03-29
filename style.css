@@ -19,8 +19,12 @@ body {
 }
 
 
-.news {
+.contents {
     margin-top: 15%;
+}
+
+.news {
+    margin-top: 10%;
     text-align: center;
 }
 
