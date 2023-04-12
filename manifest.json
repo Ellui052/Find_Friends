@@ -1,0 +1,9 @@
+{
+  "name": "경소고 나만의 앱 만들기",
+  "short_name": "경나앱",
+  "icons": [],
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fff",
+  "theme_color": "#fff"
+}
