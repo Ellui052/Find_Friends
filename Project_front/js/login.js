@@ -18,10 +18,13 @@ function login() {
     alert("전화번호 또는 아이디를 입력해주세요.");
   } else if (input[1].value == "") {
     alert("비밀번호를 입력해주세요");
+  } else if(input[1].value.length < 6){
+    
   } else {
     location.replace("./main.html");
-  }
 }
+}
+
 
 function join() {
   location.replace("./join_1.html");
