@@ -22,9 +22,10 @@
 
 .post {
   width: 90%;
-  height: 30rem;
+  height: 500px;
   margin-left: 50%;
   transform: translateX(-50%);
+  background-color: #d8d8d8;
 }
 
 .footer {
@@ -41,4 +42,81 @@
   width: 28px;
   margin-left: 4%;
   margin-right: 4%;
+}
+
+@media (min-width: 600px) {
+  .logo img {
+    margin-top: 5%;
+    width: 35%;
+  }
+
+  .posts {
+    margin-bottom: 15%;
+  }
+
+  .footer img {
+    width: 34px;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+}
+
+@media (min-width: 800px) {
+  .logo img {
+    margin-top: 5%;
+    width: 30%;
+    margin-bottom: 5%;
+  }
+  
+  .posts {
+    margin-bottom: 10%;
+  }
+
+  .footer img {
+    width: 38px;
+    margin-left: 6%;
+    margin-right: 6%;
+  }
+}
+
+@media (min-width: 1000px) {
+  .logo img {
+    margin-top: 5%;
+    width: 25%;
+  }
+
+  .post {
+    width: 80%;
+  }
+
+  .posts {
+    margin-bottom: 0;
+  }
+
+  .footer {
+    background-color: transparent;
+    transform: rotate(90deg);
+    width: 50%;
+    top: 40%;
+    left: -22%;
+    height: 40px;
+    border: none;
+  }
+
+  .footer img {
+    transform: rotate(-90deg);
+    margin: 1%;
+    width: 45px;
+  }
+}
+
+@media(min-width: 1200px) {
+  .logo img {
+    margin-top: 1%;
+    width: 15%;
+  }
+  
+  .post {
+    width: 50%;
+  }
 }
