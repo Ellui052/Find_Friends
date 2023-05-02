@@ -26,6 +26,7 @@
   height: 350px;
   outline: none;
   resize: none;
+  padding: 5px;
 }
 
 .write button {
