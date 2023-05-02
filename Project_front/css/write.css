@@ -10,6 +10,7 @@
   width: 35%;
   margin-right: 5px;
   margin-bottom: 5px;
+  padding: 5px;
   outline: none;
 }
 
@@ -17,6 +18,7 @@
   width: 100%;
   margin-bottom: 10px;
   outline: none;
+  padding: 5px;
 }
 
 .main {
@@ -42,4 +44,4 @@
   .sub {
     width: 20%;
   }
-} 
+}
