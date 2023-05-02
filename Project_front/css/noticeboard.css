@@ -1,0 +1,10 @@
+.write a {
+  text-decoration: none;
+  background-color: gray;
+  color: white;
+  padding: 5px;
+}
+
+.write {
+  text-align: right;
+}
