@@ -1,9 +1,9 @@
 .write {
   width: 90%;
-  position: fixed;
+  position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  padding-bottom : 100px;
+  padding-bottom: 100px;
 }
 
 .sub {
@@ -42,4 +42,4 @@
   .sub {
     width: 20%;
   }
-}
+} 
