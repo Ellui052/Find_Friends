@@ -1,7 +1,7 @@
 function input() {
   const input = document.getElementsByTagName("input");
   const btn = document.getElementsByTagName("button");
-  if (input[0].value == "" || input[1].value == "" || input[2].value == "") {
+  if (input[0].value == "" || input[1].value == "" || input[1].value.length < 6 || input[2].value == "") {
     btn[0].style.backgroundColor = "#c4c4c4";
   } else {
     btn[0].style.backgroundColor = "black";
