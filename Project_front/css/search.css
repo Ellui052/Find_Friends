@@ -34,12 +34,20 @@
 }
 
 @media (min-width: 1000px) {
+  .search input {
+    width: 40%;
+  }
+
   .post {
     height: 200px;
   }
 }
 
 @media (min-width: 1500px) {
+  .search input {
+    width: 25%;
+  }
+
   .post {
     height: 280px;
   }
