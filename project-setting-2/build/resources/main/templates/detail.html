@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Friends</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&display=swap");
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "Noto Sans KR", sans-serif;
+        }
+
+        .logo {
+            text-align: center;
+        }
+
+        .logo img {
+            width: 40%;
+            margin-top: 15%;
+            margin-bottom: 10%;
+        }
+
+        .write button {
+            width: 60px;
+            height: 30px;
+            margin-top: 5px;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            border-top: 1px solid #d8d8d8;
+            padding: 10px;
+            background-color: #ffffff;
+        }
+
+        .footer img {
+            width: 28px;
+            margin-left: 4%;
+            margin-right: 4%;
+        }
+
+        @media (min-width: 600px) {
+            .logo img {
+                margin-top: 5%;
+                width: 35%;
+            }
+
+            .footer img {
+                width: 34px;
+                margin-left: 5%;
+                margin-right: 5%;
+            }
+        }
+
+        @media (min-width: 800px) {
+            .logo img {
+                margin-top: 5%;
+                width: 30%;
+                margin-bottom: 5%;
+            }
+
+            .footer img {
+                width: 38px;
+                margin-left: 6%;
+                margin-right: 6%;
+            }
+        }
+
+        @media (min-width: 1000px) {
+            .logo img {
+                margin-top: 5%;
+                width: 25%;
+            }
+
+            .footer {
+                background-color: transparent;
+                transform: rotate(90deg);
+                width: 50%;
+                top: 50%;
+                left: -22%;
+                height: 40px;
+                border: none;
+            }
+
+            .footer img {
+                transform: rotate(-90deg);
+                margin: 1%;
+                width: 45px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .logo img {
+                margin-top: 1%;
+                width: 15%;
+            }
+        }
+
+        .write {
+            width: 90%;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            padding-bottom: 100px;
+        }
+
+        .sub {
+            width: 35%;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            padding: 5px;
+            outline: none;
+        }
+
+        .title {
+            width: 100%;
+            margin-bottom: 10px;
+            outline: none;
+            padding: 5px;
+        }
+
+        .main {
+            width: 100%;
+            height: 350px;
+            padding: 5px;
+            outline: none;
+            resize: none;
+        }
+
+        .write button {
+            width: 60px;
+            height: 30px;
+            margin-top: 5px;
+            color: white;
+            border: none;
+            text-align: center;
+        }
+
+        @media (min-width: 1200px) {
+            .write {
+                width: 45%;
+            }
+
+            .sub {
+                width: 20%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div class="logo">
+    <img src="https://i.ibb.co/hsJpYx2/LOGO.png" alt="Logo">
+</div>
+<div class="write">
+    <form method="post" action="/board/delete">
+        <input name="boardId" type="hidden" th:value="${board.id}">
+        <input class="sub" name="updateKey" type="password" placeholder="삭제키">
+        <span>작성자: </span><span class="title" th:text="${board.getWriter().getNickname()}"></span>
+        <div class="title" name="title" th:text="${board.title}" placeholder="글의 제목을 입력하세요"></div>
+        <div class="main" name="content" th:text="${board.content}"></div>
+        <button style="background-color: #000000;" type="submit">삭제</button>
+        <button style="background-color: #000000;" type="submit">뒤로</button>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Find Friends</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&display=swap");
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "Noto Sans KR", sans-serif;
+        }
+
+        .logo {
+            text-align: center;
+        }
+
+        .logo img {
+            width: 40%;
+            margin-top: 15%;
+            margin-bottom: 10%;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            border-top: 1px solid #d8d8d8;
+            padding: 10px;
+            background-color: #ffffff;
+        }
+
+        .footer img {
+            width: 28px;
+            margin-left: 4%;
+            margin-right: 4%;
+        }
+
+        @media (min-width: 600px) {
+            .logo img {
+                margin-top: 5%;
+                width: 35%;
+            }
+
+            .footer img {
+                width: 34px;
+                margin-left: 5%;
+                margin-right: 5%;
+            }
+        }
+
+        @media (min-width: 800px) {
+            .logo img {
+                margin-top: 5%;
+                width: 30%;
+                margin-bottom: 5%;
+            }
+
+            .footer img {
+                width: 38px;
+                margin-left: 6%;
+                margin-right: 6%;
+            }
+        }
+
+        @media (min-width: 1000px) {
+            .logo img {
+                margin-top: 5%;
+                width: 25%;
+            }
+
+            .footer {
+                background-color: transparent;
+                transform: rotate(90deg);
+                width: 50%;
+                top: 50%;
+                left: -22%;
+                height: 40px;
+                border: none;
+            }
+
+            .footer img {
+                transform: rotate(-90deg);
+                margin: 1%;
+                width: 45px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .logo img {
+                margin-top: 1%;
+                width: 15%;
+            }
+        }
+
+        .search {
+            text-align: center;
+        }
+
+        .search input {
+            width: 60%;
+            border: none;
+            border-radius: 10px;
+            outline-style: none;
+            margin-bottom: 5%;
+            padding: 5px;
+            background-color: #d8d8d8;
+            color: #000;
+        }
+
+        .main {
+            margin-bottom: 20%;
+            width: 80%;
+            margin-left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+        }
+
+        .post {
+            width: 20%;
+            height: 60px;
+            display: inline-flex;
+        }
+
+        @media (min-width: 800px) {
+            .post {
+                height: 120px;
+            }
+        }
+
+        @media (min-width: 1000px) {
+            .search input {
+                width: 40%;
+            }
+
+            .post {
+                height: 200px;
+            }
+        }
+
+        @media (min-width: 1500px) {
+            .search input {
+                width: 25%;
+            }
+
+            .post {
+                height: 280px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div class="logo">
+    <img src="https://i.ibb.co/hsJpYx2/LOGO.png" alt="Logo" onclick="home()">
+</div>
+<div class="search">
+    <form method="get" action="/view/search">
+        <input type="text" name="keyword" placeholder="🔍︎ 검색">
+    </form>
+</div>
+<div class="main">
+    <div class="post" th:if="${!boards.isEmpty()}">
+        <div class="nbs" th:each="board : ${boards}">
+            <a th:href="@{/view/board(id=${board.id})}">
+                <p th:text="${board.title}"></p>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <img src="https://i.ibb.co/MZ4n2c8/noticeboard-sel.png" alt="noticeboard" onclick="notice()">
+    <img src="https://i.ibb.co/G2MmP0c/search-sel.png" alt="search" onclick="search()">
+    <img src="https://i.ibb.co/dpHjc9t/user-sel.png" alt="user" onclick="user()">
+</div>
+</body>
+<script>
+    function user() {
+        location.href = "/view/user";
+    }
+
+    function search() {
+        location.href = "/view/search";
+    }
+
+    function notice() {
+        location.href = "/view/noticeboard";
+    }
+
+</script>
+
+</html>

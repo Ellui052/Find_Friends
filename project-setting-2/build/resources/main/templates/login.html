@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Find Friends</title>
+
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&display=swap");
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "Noto Sans KR", sans-serif;
+        }
+
+        .title {
+            text-align: center;
+        }
+
+        .title img {
+            width: 70%;
+            margin-top: 30%;
+        }
+
+        .login {
+            text-align: center;
+            width: 70%;
+            margin-left: 50%;
+            margin-top: 10%;
+            transform: translateX(-50%);
+        }
+
+        .login input {
+            width: 90%;
+            padding: 10px;
+            margin-top: 5%;
+            border: 1px solid #d8d8d8;
+            border-radius: 3px;
+        }
+
+        .btn {
+            margin-top: 8%;
+            background-color: #c4c4c4;
+            color: white;
+            border: none;
+            width: 95%;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 15px;
+        }
+
+        .find {
+            margin-top: 5%;
+            white-space: nowrap;
+            color: #707070;
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+        .birth {
+            width: 100%;
+            margin-top: 5%;
+        }
+
+        .birth select {
+            width: 30%;
+            text-align: center;
+            border: none;
+            border-radius: 3px;
+            padding: 8px;
+            color: #707070;
+            background-color: #d8d8d8;
+            margin-right: 1%;
+            margin-left: 1%;
+        }
+
+        @media (min-width: 600px) {
+            .title img {
+                width: 70%;
+                margin-top: 20%;
+            }
+
+            .find {
+                margin-top: 8%;
+                white-space: nowrap;
+                color: #707070;
+                font-size: 14px;
+                cursor: pointer;
+            }
+        }
+
+        @media (min-width: 800px) {
+            .title img {
+                width: 55%;
+            }
+
+            .login {
+                text-align: center;
+                width: 50%;
+                margin-top: 3%;
+            }
+
+            .login input {
+                width: 90%;
+                margin-top: 3%;
+            }
+
+            .birth select {
+                width: 29%;
+            }
+
+            .btn {
+                margin-top: 5%;
+                width: 94%;
+            }
+
+            .find {
+                margin-top: 5%;
+            }
+        }
+
+        @media (min-width: 1100px) {
+            .title img {
+                width: 25%;
+                margin-top: 10%;
+            }
+
+            .login {
+                width: 30%;
+                margin-top: 1%;
+            }
+
+            .login input {
+                margin-top: 3%;
+            }
+
+            .birth {
+                margin-top: 3%;
+            }
+
+            .btn {
+                margin-top: 3%;
+                width: 93%;
+            }
+
+            .find {
+                font-size: 15px;
+                margin-top: 3%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div class="title">
+    <img src="https://i.ibb.co/hsJpYx2/LOGO.png" alt="LOGO"/>
+</div>
+<div class="login">
+    <form method="post" action="/login-process">
+        <input type="text" name="username" placeholder="전화번호 또는 아이디" oninput="input()"/>
+        <input type="password" name="password" placeholder="비밀번호" oninput="input()"/>
+        <button class="btn" type="submit">로그인</button>
+        <p class="find" onclick="">비밀번호를 잊으셨나요?</p>
+        <p class="find" onclick="join()">계정이 없으신가요?</p>
+    </form>
+</div>
+</body>
+<script>
+    function input() {
+        const input = document.getElementsByTagName("input");
+        const btn = document.getElementsByTagName("button");
+        if (
+            input[0].value == "" ||
+            input[1].value == "" ||
+            input[1].value.length < 6
+        ) {
+            btn[0].style.backgroundColor = "#c4c4c4";
+        } else {
+            btn[0].style.backgroundColor = "black";
+        }
+    }
+
+    function join() {
+        location.href = "/view/join"
+    }
+</script>
+
+</html>
